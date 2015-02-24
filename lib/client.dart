@@ -294,8 +294,7 @@ class RouteImpl extends Route {
     }
     for (RouteImpl route = routeToGo; route != this; route = route.parent) {
       tail = route.path.reverse(
-          parameters: _joinParams(parameters == null ?
-              route.parameters : parameters, route._lastEvent),
+          parameters: parameters == null ? route.parameters : parameters,
           tail: tail);
     }
     return tail;
